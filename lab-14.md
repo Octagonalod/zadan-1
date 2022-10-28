@@ -29,3 +29,18 @@
 
 ![img-3](/lab-14-files/img-3.png)
 <br>Малюнок 3 - Ця ж сторінка, але обробна прогноз погоди для м. Київ</br>
+
+##Методичні вказівки
+
+Для запиту на сайт використовуйте функції PHP curl_setopt(), curl_exec() та curl_close(). Наприклад, ось так:
+
+```php
+$curl=curl_init();
+curl_setopt($curl, CURLOPT_URL,
+'http://www.gismeteo.ua/city/hourly/5053/');
+curl_setopt($curl, CURLOPT_RETURNTRANSFER,true);
+$out = curl_exec($curl);
+```
+
+Для конвертації отриманого вмісту веб-сторінки з кодування UTF-8 у кодування Windows-1251 використовуйте mb_convert_encoding()
+<br>На екрані виведіть вихідний код сторінки сайту http://www.gismeteo.ua/city/hourly/5053/ та знайдіть необхідні ключові слова (малюнок 4)</br>
